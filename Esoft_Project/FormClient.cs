@@ -98,5 +98,20 @@ namespace Esoft_Project
         {
 
         }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            if (listViewClient.SelectedItems.Count == 1)
+            {
+                ClientsSet clientsSet = listViewClient.SelectedItems[0].Tag as ClientsSet;
+                clientsSet.FirstName = textBoxFirstName.Text;
+                clientsSet.MiddleName = textBoxMiddleName.Text;
+                clientsSet.LastName = textBoxLastName.Text;
+                clientsSet.Phone = textBoxPhone.Text;
+                clientsSet.Email = textBoxEmail.Text;
+                Program.bazadb.SaveChanges();
+                ShowClient();
+            }
+        }
     }
 }

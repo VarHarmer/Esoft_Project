@@ -179,11 +179,9 @@ namespace Esoft_Project
             realEstate.Address_House = textBoxAddress_House.Text;
             realEstate.Address_Street = textBoxAddress_Street.Text;
             realEstate.Address_Number = textBoxAddress_Number.Text;
-
             realEstate.Coordinate_latitude = Convert.ToDouble(textBoxCoordinate_latitude.Text);
             realEstate.Coordinate_longitude = Convert.ToDouble(textBoxCoordinate_longitude.Text);
             realEstate.TotalArea = Convert.ToDouble(textBoxTotalArea.Text);
-
             if (comboBoxType.SelectedIndex == 0)
             {
                 realEstate.Type = 0;
@@ -201,6 +199,7 @@ namespace Esoft_Project
             }
             Program.bazadb.RealEstateSet.Add(realEstate);
             Program.bazadb.SaveChanges();
+            ShowRealEstateSet();
         }
         void ShowRealEstateSet()
         {
